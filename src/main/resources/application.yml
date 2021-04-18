@@ -15,3 +15,5 @@ spring:
     encoding: UTF-8
   jwt:
     secret: govlepel@$&
+  main:
+    allow-bean-definition-overriding: true

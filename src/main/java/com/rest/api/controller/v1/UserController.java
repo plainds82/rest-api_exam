@@ -10,10 +10,13 @@ import com.rest.api.repository.UserJpaRepository;
 import com.rest.api.service.ResponseService;
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@PreAuthorize("hasRole('ROLE_ADMIN')") // 또는 @Secured("ROLE_USER") 으로 권한 설정 가능. 메소드별 설정도 가능. 여기다가 권한 설정 하면 SecurityConfiguration.configure 의 exceptionHandling 이 안됨...
 @Api(tags = {"2. User"})
 @RequiredArgsConstructor
 @RestController
